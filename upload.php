@@ -7,19 +7,6 @@ error_reporting(E_ALL);
 
 if ( isset( $_POST[ 'submit' ] ) ) {
     $file = $_FILES[ 'file' ];
-/**
-   * Returns the JSON encoded POST data, if any, as an object.
-   * 
-   * @return Object|null
-   */
-  function retrieveJsonPostData()
-  {
-    // get the raw POST data
-    $rawData = file_get_contents("php://input");
-
-    // this returns null if not valid json
-    return json_decode($rawData);
-  }
 //      var_dump($file['name']); exit();
 
     $maxFileSize = 1000000 * 500; // 500 mb
