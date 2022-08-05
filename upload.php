@@ -3,6 +3,20 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+/**
+   * Returns the JSON encoded POST data, if any, as an object.
+   * 
+   * @return Object|null
+   */
+ function retrieveJsonPostData()
+  {
+    // get the raw POST data
+    $rawData = file_get_contents("php://input");
+
+    // this returns null if not valid json
+    return json_decode($rawData);
+  }
+
 if ( isset( $_POST[ 'submit' ] ) ) {
     $file = $_FILES[ 'file' ];
 
